@@ -13,6 +13,7 @@ import com.example.ventevoiture01.Repository.ModeleJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.List;
@@ -126,8 +127,8 @@ public class AnnonceService {
                 .map(result -> new MeilleureAnnonce((Annonce) result[0], (Long) result[1]))
                 .collect(Collectors.toList());
     }
-
-    public Annonce_Favoris createAnnonceFavoris(Annonce_Favoris annonce) {
+    
+     public Annonce_Favoris createAnnonceFavoris(Annonce_Favoris annonce) {
         return annonceFavorisJPA.save(annonce);
     }
 
@@ -144,6 +145,7 @@ public class AnnonceService {
     }
 
     public void valider(int id) {
-            annonceRepository.valider(id);
-      }
+        annonceRepository.valider(id);
+        annonceRepository.date_validation(id, LocalDateTime.now());
+    }
 }
