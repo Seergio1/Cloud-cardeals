@@ -1,26 +1,44 @@
 package com.example.ventevoiture01.Models;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
 
 @Entity
-    public class Annonce {
-        @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
-        int id_annonce;
-        @ManyToOne
-        @JoinColumn(name = "id_voiture")
-        Voiture voiture;
-        @ManyToOne
-        @JoinColumn(name = "id_employer")
-        Employer employer;
-        String description;
-        String etat_annonce;
-        String status_voiture;
-        Date date;
+public class Annonce {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    int id_annonce;
+    @ManyToOne
+    @JoinColumn(name = "id_voiture")
+    Voiture voiture;
+    @ManyToOne
+    @JoinColumn(name = "id_employer")
+    Employer employer;
+    String description;
+    String etat_annonce;
+    LocalDateTime validation_annonce;
+    String status_voiture;
+    LocalDateTime date_de_vente;
 
-    public Annonce(int id_annonce, Voiture voiture, Employer employer, String description, String etat_annonce, String status_voiture, Date date) {
+    public LocalDateTime getDate_de_vente() {
+        return date_de_vente;
+    }
+
+    public void setDate_de_vente(LocalDateTime date_de_vente) {
+        this.date_de_vente = date_de_vente;
+    }
+
+    Date date;
+
+    public void valider_annonce() {
+        this.validation_annonce = LocalDateTime.now();
+    }
+
+    public Annonce(int id_annonce, Voiture voiture, Employer employer, String description, String etat_annonce,
+            String status_voiture, Date date) {
         this.id_annonce = id_annonce;
         this.voiture = voiture;
         this.employer = employer;
@@ -30,7 +48,8 @@ import jakarta.persistence.*;
         this.date = date;
     }
 
-    public Annonce(Voiture voiture, Employer employer, String description, String etat_annonce, String status_voiture, Date date) {
+    public Annonce(Voiture voiture, Employer employer, String description, String etat_annonce, String status_voiture,
+            Date date) {
         this.voiture = voiture;
         this.employer = employer;
         this.description = description;
@@ -96,5 +115,13 @@ import jakarta.persistence.*;
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public LocalDateTime getValidation_annonce() {
+        return validation_annonce;
+    }
+
+    public void setValidation_annonce(LocalDateTime validation_annonce) {
+        this.validation_annonce = validation_annonce;
     }
 }
