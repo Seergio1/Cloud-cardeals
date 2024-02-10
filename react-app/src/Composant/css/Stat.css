@@ -1,0 +1,17 @@
+.stat-container {
+}
+
+.bestannonce {
+}
+
+.bestVente {
+}
+
+.stat-container .stat-item .title {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+}
+
+.stat-container .stat-item {
+    margin: 1rem 0;
+}
