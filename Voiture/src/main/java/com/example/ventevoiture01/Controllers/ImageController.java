@@ -81,7 +81,7 @@ public class ImageController {
         return null;
     }
 
-    @PostMapping("/image/string")
+    @PostMapping("/image/string/{idAnnonce}")
     public ResponseEntity<String> upload(@RequestBody String[] urls,
                                                    @RequestParam("idAnnonce") int idAnnonce) {
         FileHelper fileHelper = new FileHelper();
