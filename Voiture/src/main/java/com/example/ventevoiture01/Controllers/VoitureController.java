@@ -108,4 +108,15 @@ public class VoitureController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/voiture/last/utilisateur/{utilisateurId}")
+    public ResponseEntity<Voiture> getLastVoitureByUtilisateur(@PathVariable long utilisateurId) {
+        Optional<Employer> utilisateur = employerService.getEmployerById(utilisateurId);
+        if (utilisateur.isPresent()) {
+            List<Voiture> voitures = voitureService.getVoitureByUtilisateur(utilisateur.get());
+            return new ResponseEntity<>(voitures.get(0), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
