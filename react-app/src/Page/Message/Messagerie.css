@@ -1,0 +1,362 @@
+:root {
+    --msg-primary-color: #001e36;
+    --msg-secondary-color: #b9d0e2;
+}
+
+.back-button {
+    width: fit-content;
+}
+
+.back-button:hover {
+    cursor: pointer;
+}
+
+.box-messagerie {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* liste message debut */
+.liste-message-container {
+    width: 25%;
+    padding: 1rem;
+
+    border-right: 1px solid lightgray;
+}
+
+.active-container {
+    border-bottom: 1px solid lightgray;
+}
+
+.liste-message-user-container .header,
+.active-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.header .title {
+    font-family: Sora semi-bold;
+}
+
+.header .number-active {
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--msg-primary-color);
+    color: white;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-active::-webkit-scrollbar {
+    display: none;
+}
+
+.box-active {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0.7rem 0;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.box-active .active-user-item {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    margin: 0 0.2rem;
+    flex-shrink: 0;
+}
+
+.box-liste-message-user::-webkit-scrollbar {
+    display: none;
+}
+
+.box-liste-message-user {
+    overflow-y: scroll;
+}
+
+.liste-message-user-item {
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 0.7rem 0.5rem 0.7rem 0;
+    align-items: stretch;
+    transition: 0.2s ease-in;
+    border-radius: 5px;
+}
+
+.liste-message-user-item .user-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    flex-shrink: 0;
+    margin: 0 0.4rem;
+}
+
+.liste-message-user-item .user-info {
+    /* background-color: red; */
+}
+
+.liste-message-user-item .user-info .user-name {
+    font-family: Sora semi-bold;
+    font-size: 12px;
+    margin-bottom: 0.1rem;
+}
+
+.liste-message-user-item .user-info .user-message {
+    font-family: Sora light;
+    font-size: 12px;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+
+.liste-message-user-item .send-time {
+    font-family: Sora;
+    font-size: 10px;
+    margin-right: 0.5%;
+}
+
+.liste-message-user-item:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.liste-message-user-item .active-message {
+    background-color: var(--msg-primary-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* liste message fin*/
+
+
+
+
+
+/* discussion debut */
+.discussion-container {
+    width: 50%;
+}
+
+.header-discussion {
+    padding: 1rem 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.header-discussion .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.header-discussion .user-info .user-name {
+    font-family: Sora semi-bold;
+}
+
+.header-discussion .user-info .user-img {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    flex-shrink: 0;
+    margin: 0 0.4rem;
+}
+
+.content-discussion::-webkit-scrollbar {
+    opacity: 0;
+    width: 0.2rem;
+}
+
+.content-discussion:hover::-webkit-scrollbar {
+    opacity: 1;
+    width: 0.2rem;
+}
+
+.content-discussion:hover::-webkit-scrollbar-thumb {
+    background-color: var(--msg-primary-color);
+    width: 5px;
+    border-radius: 5px;
+}
+
+.content-discussion {
+    /* background-color: red; */
+    height: 75vh;
+    border-bottom: 1px solid lightgray;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.discussion-item {
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    /* flex-direction: row-reverse; rehefa hanao anlay msg anlay utilisateur ray*/
+}
+
+.discussion-item.right {
+    flex-direction: row-reverse;
+}
+
+.discussion-item.right .user-message {
+    color: red;
+}
+
+
+.discussion-item.user .user-msg {
+    background-color: var(--msg-secondary-color);
+}
+
+.discussion-item .user-img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    flex-shrink: 0;
+    margin: 0 0.4rem;
+}
+
+.discussion-item .user-msg {
+    font-family: Sora light;
+    font-size: 13px;
+    background-color: whitesmoke;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0.6rem;
+    width: fit-content;
+    max-width: 55%;
+}
+
+.discussion-item .msg-time {
+    font-family: Sora light;
+    font-size: 12px;
+    color: lightgray;
+    margin: 0 0.2rem;
+}
+
+.box-send-msg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--msg-primary-color);
+    padding: 0.5rem;
+    color: white;
+    border-radius: 5px;
+
+}
+
+.send-button svg {
+    transform: rotate(45deg) translateY(-0.12rem);
+    top: 0.5rem;
+}
+
+.send-button-text {
+    font-size: 12px;
+    font-family: Sora light;
+    margin: 0 0.4rem;
+}
+
+.box-send-msg textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.box-send-msg textarea {
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+    width: 88%;
+    resize: none;
+}
+
+/* discussion debut */
+
+/* profil debut */
+.profil-container {
+    /* background-color: green; */
+    width: 25%;
+    border-left: 1px solid lightgray;
+}
+
+.profil-info {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.profil-info .user-name {
+    margin-top: 1.5rem;
+    font-family: Sora semi-bold;
+}
+
+.profil-info .user-img {
+    width: 80px;
+    height: 80px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+}
+
+.detail-info {
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-info .detail-info-item {
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.detail-info .detail-info-item .label {
+    font-size: 13px;
+    padding: 0.5rem;
+    color: lightgray;
+}
+
+/* profil fin */
+
+/* CSS pour l'effet de squelette */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    color: transparent;
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+/* Animation pour l'effet de squelette */
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}

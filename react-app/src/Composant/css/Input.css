@@ -1,0 +1,116 @@
+  @font-face {
+    font-family: "Sora";
+    src: local("Sora"), url("./../../assets/font/Sora/static/Sora-Regular.ttf");
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sora", sans-serif;
+  }
+
+  /* input */
+  .inputBox {
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .inputBox label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 2px;
+  }
+
+  .inputBox input {
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgb(148, 148, 148);
+    font-size: 17px;
+    padding: 12px 20px;
+    background-color: transparent;
+  }
+
+  /* select */
+  .selectBox {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    position: relative;
+    margin: 0 0.5rem;
+
+  }
+
+  .selectBox label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 2px;
+  }
+
+  .selectLabel {
+    font-size: 13px;
+    /* font-weight: bold; */
+    /* margin-bottom: 5px; */
+    width: 120px;
+    border: 1px solid rgb(148, 148, 148);
+    padding: 12px 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .selectLabel i {
+    position: relative;
+    left: 10px;
+  }
+
+  .selectItemBox::-webkit-scrollbar {
+    display: none;
+  }
+
+  .selectItemBox {
+    width: 120px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    z-index: 2;
+    overflow-y: scroll;
+    background-color: var(--secondaire);
+  }
+
+  .selectItem {
+    /* margin: 10px auto; */
+    padding: 12px 20px;
+    font-size: 17px;
+  }
+
+  .selectItem:hover {
+    cursor: pointer;
+    background-color: lightgray;
+    color: white;
+  }
+
+  .up {
+    height: 150px;
+  }
+
+  .down {
+    height: 0;
+  }
+
+  /* button */
+  .buttonBox button {
+    outline: none;
+    border: none;
+
+  }

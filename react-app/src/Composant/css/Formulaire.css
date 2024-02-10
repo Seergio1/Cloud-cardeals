@@ -1,0 +1,72 @@
+.box-form,
+.box-formulaire{
+    background-color: var(--secondaire);
+    display: flex;
+    flex-direction: column;
+    width:90%;
+    margin: auto;
+    padding: 22px;
+    border-radius: 10px;
+}
+#box-form{
+    width: 300px;
+}
+.form-header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center ;
+    font-size: 22px;
+    color: var(--troisieme-couleur);
+    padding: 3px 10px;
+}
+.formP{
+    display: flex;
+    flex-direction: column;
+}
+.first-part{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+}
+.second-part #selectForm .selectLabel,
+.first-part #selectForm .selectLabel,
+.second-part .inputForm,
+.first-part .inputForm{
+    font-size: 14px;
+    color: var(--font);
+}
+#box-form .formP .second-part{
+    flex-direction: column;
+}
+.second-part{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+}
+.second-part .selectLabel i{
+    left: 140px;
+}
+.second-part .btn-form,
+.first-part .btn-form{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 5px;
+    background-color: var(--troisieme-couleur);
+    color: var(--font);
+    font-weight: bold;
+}
+.first-part .btn-form{
+    cursor: pointer;
+}
+/* form update */
+.box-formulaire.update{
+    width: 1500px;
+}

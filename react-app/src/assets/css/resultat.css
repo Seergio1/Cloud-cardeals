@@ -1,0 +1,39 @@
+.resultat-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.titre{
+    text-align: center;
+    font-size: 40px;
+}
+.vote-filtre-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.vote-filtre-container-item{
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #607d8b;
+    color: white;
+}
+.resultat-vote-container{
+    margin-top: 20px;
+}
+.info-icon{
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #607d8b;
+    color: white;
+}
+.vote-filtre-container-item:hover,
+.info-icon:hover{
+    cursor: pointer;
+}

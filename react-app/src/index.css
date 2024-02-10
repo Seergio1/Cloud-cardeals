@@ -1,0 +1,43 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@font-face {
+  font-family: "Sora";
+  src: local("Sora"), url("./assets/font/Sora/static/Sora-Regular.ttf")format("truetype");
+}
+
+@font-face {
+  font-family: "Sora light";
+  src: local("Sora"), url("./assets/font/Sora/static/Sora-Light.ttf")format("truetype");
+}
+
+@font-face {
+  font-family: "Sora extralight";
+  src: local("Sora"), url("./assets/font/Sora/static/Sora-ExtraLight.ttf")format("truetype");
+}
+
+@font-face {
+  font-family: "Sora semi-bold";
+  src: local("Sora"), url("./assets/font/Sora/static/Sora-SemiBold.ttf")format("truetype");
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+}
+
+:root {
+  --principal: #f2f2f2;
+  --secondaire: white;
+  --troisieme-couleur: #0d2227;
+  --font: #111;
+
+
+}
