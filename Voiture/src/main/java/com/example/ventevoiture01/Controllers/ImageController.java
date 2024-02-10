@@ -78,4 +78,29 @@ public class ImageController {
         }
         return null;
     }
+
+    @PostMapping("/image/string")
+    public ResponseEntity<String> upload(@RequestBody String[] urls,
+                                                   @RequestParam("idAnnonce") int idAnnonce) {
+        FileHelper fileHelper = new FileHelper();
+        RestTemplate restTemplate = new RestTemplate();
+
+        for (int i = 0; i < urls.length; i++) {
+            ResponseEntity<byte[]> response = restTemplate.exchange(
+                    urls[i], HttpMethod.GET, null, byte[].class);
+            String base64 = Base64.getEncoder().encodeToString(response.getBody());
+            String url = fileHelper.uploadOnline(base64);
+            System.out.println("url : " + url);
+
+            System.out.println("id_annonce : " + idAnnonce);
+            Image image = Image.builder()
+                    .idAnnonce(idAnnonce)
+                    .url(url)
+                    .build();
+            Image createdImage = imageService.createImage(image);
+
+        }
+
+        return ResponseEntity.ok("Fichier reçu avec succès!");
+    }
 }
