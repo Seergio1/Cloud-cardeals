@@ -83,7 +83,7 @@ public class ImageController {
 
     @PostMapping("/image/string/{idAnnonce}")
     public ResponseEntity<String> upload(@RequestBody String[] urls,
-                                                   @RequestParam("idAnnonce") int idAnnonce) {
+                                                   @PathVariable int idAnnonce) {
         FileHelper fileHelper = new FileHelper();
         RestTemplate restTemplate = new RestTemplate();
 
