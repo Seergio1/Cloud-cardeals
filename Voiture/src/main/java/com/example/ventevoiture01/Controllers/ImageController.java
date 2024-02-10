@@ -85,15 +85,15 @@ public class ImageController {
     public ResponseEntity<String> upload(@RequestBody String[] urls,
                                                    @PathVariable int idAnnonce) {
         FileHelper fileHelper = new FileHelper();
-        RestTemplate restTemplate = new RestTemplate();
+        // RestTemplate restTemplate = new RestTemplate();
 
         for (int i = 0; i < urls.length; i++) {
-            ResponseEntity<byte[]> response = restTemplate.exchange(
-                    urls[i], HttpMethod.GET, null, byte[].class);
-            String base64 = Base64.getEncoder().encodeToString(response.getBody());
-            String url = fileHelper.uploadOnline(base64);
+            // ResponseEntity<byte[]> response = restTemplate.exchange(
+            //         urls[i], HttpMethod.GET, null, byte[].class);
+            // String base64 = Base64.getEncoder().encodeToString(response.getBody());
+            // String url = fileHelper.uploadOnline(base64);
+            String url = fileHelper.uploadOnline(urls[i]);
             System.out.println("url : " + url);
-
             System.out.println("id_annonce : " + idAnnonce);
             Image image = Image.builder()
                     .idAnnonce(idAnnonce)
