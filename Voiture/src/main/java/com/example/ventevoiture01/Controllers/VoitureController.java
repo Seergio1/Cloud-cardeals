@@ -114,7 +114,7 @@ public class VoitureController {
         Optional<Employer> utilisateur = employerService.getEmployerById(utilisateurId);
         if (utilisateur.isPresent()) {
             List<Voiture> voitures = voitureService.getVoitureByUtilisateur(utilisateur.get());
-            return new ResponseEntity<>(voitures.get(0), HttpStatus.OK);
+            return new ResponseEntity<>(voitures.get(voitures.size()), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
