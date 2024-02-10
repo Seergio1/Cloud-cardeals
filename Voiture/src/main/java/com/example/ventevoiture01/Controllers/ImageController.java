@@ -4,9 +4,11 @@ import com.example.ventevoiture01.Models.Image;
 import com.example.ventevoiture01.Services.ImageService;
 import com.example.ventevoiture01.Utils.FileHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
