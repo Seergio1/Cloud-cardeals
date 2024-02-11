@@ -17,6 +17,7 @@ public class Annonce {
     @ManyToOne
     @JoinColumn(name = "id_employer")
     Employer employer;
+    @Column(columnDefinition = "TEXT")
     String description;
     String etat_annonce;
     LocalDateTime validation_annonce;
